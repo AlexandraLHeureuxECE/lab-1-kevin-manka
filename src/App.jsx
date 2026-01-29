@@ -96,14 +96,14 @@ export default function App() {
       </h1>
 
       {/* Game Status Bar */}
-      <div className="flex items-center justify-between w-full max-w-md mb-8 bg-game-board/50 p-4 rounded-2xl backdrop-blur-sm border border-white/10 shadow-xl transition-colors duration-300">
+      <div className="flex items-center justify-between w-full max-w-md mb-8 bg-game-board/50 p-4 rounded-2xl backdrop-blur-sm border border-game-border shadow-xl transition-colors duration-300">
         <div className="text-xl md:text-2xl font-medium text-game-text">
           {getStatusMessage()}
         </div>
         <div className="flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className="p-2 bg-game-bg hover:bg-opacity-80 text-game-text rounded-lg transition-colors border border-white/10 shadow-sm"
+            className="p-2 bg-game-bg hover:bg-opacity-80 text-game-text rounded-lg transition-colors border border-game-border shadow-sm"
             aria-label="Toggle Theme"
           >
             {isDarkMode ? (
@@ -118,7 +118,7 @@ export default function App() {
           </button>
           <button
             onClick={resetGame}
-            className="px-4 py-2 bg-game-bg hover:bg-opacity-80 text-game-text rounded-lg text-sm font-semibold transition-colors border border-white/10 shadow-sm"
+            className="px-4 py-2 bg-game-bg hover:bg-opacity-80 text-game-text rounded-lg text-sm font-semibold transition-colors border border-game-border shadow-sm"
           >
             Restart
           </button>
@@ -146,7 +146,7 @@ export default function App() {
           </div>
 
           {/* Board */}
-          <div className="grid grid-cols-3 gap-3 md:gap-4 p-4 bg-game-board rounded-3xl shadow-2xl border border-white/5 transition-colors duration-300">
+          <div className="grid grid-cols-3 gap-3 md:gap-4 p-4 bg-game-board rounded-3xl shadow-2xl border border-game-border transition-colors duration-300">
             {board.map((square, index) => (
               <Square
                 key={index}

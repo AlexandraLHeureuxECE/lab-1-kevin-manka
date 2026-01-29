@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
@@ -5,26 +6,23 @@
   --color-game-bg: var(--color-game-bg);
   --color-game-board: var(--color-game-board);
   --color-game-text: var(--color-game-text);
+  --color-game-border: var(--color-game-border);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --color-game-bg: #f8fafc;
-  /* Slate 50 */
   --color-game-board: #e2e8f0;
-  /* Slate 200 */
   --color-game-text: #0f172a;
-  /* Slate 900 */
+  --color-game-border: #cbd5e1;
+  /* Slate 300 - Darker for light mode */
 }
 
 .dark {
   --color-game-bg: #0f172a;
-  /* Slate 900 */
   --color-game-board: #1e293b;
-  /* Slate 800 */
   --color-game-text: #f8fafc;
-  /* Slate 50 */
+  --color-game-border: rgba(255, 255, 255, 0.1);
+  /* Original subtle border for dark mode */
 }
 
 html,

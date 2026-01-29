@@ -10,6 +10,7 @@ export default {
         game: {
           bg: 'var(--color-game-bg)',
           board: 'var(--color-game-board)',
+          border: 'var(--color-game-border)',
           x: '#3b82f6', // Blue 500
           o: '#ef4444', // Red 500
           accent: '#10b981', // Emerald 500

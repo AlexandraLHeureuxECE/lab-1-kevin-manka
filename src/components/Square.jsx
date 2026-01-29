@@ -13,7 +13,7 @@ export default function Square({ id, piece, isWinningSquare }) {
             ref={setNodeRef}
             className={clsx(
                 "w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center transition-all duration-300",
-                "border-2 border-white/10",
+                "border-2 border-game-border",
                 !piece && "bg-game-board/50 hover:bg-game-board/80",
                 isOver && !piece && "bg-game-board ring-2 ring-emerald-400/50 shadow-[0_0_15px_rgba(52,211,153,0.3)]",
                 isWinningSquare && "bg-emerald-900/20 border-emerald-500/50 shadow-[inset_0_0_20px_rgba(16,185,129,0.2)]"
