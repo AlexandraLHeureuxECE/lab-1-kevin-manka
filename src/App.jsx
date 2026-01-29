@@ -104,7 +104,14 @@ export default function App() {
       >
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Player X Toolbar */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 min-w-[100px]">
+            <div className="h-4">
+              {!(isXNext && !winner && !isDraw) && !winner && !isDraw && (
+                <div className="text-xs font-medium text-slate-400 whitespace-nowrap animate-pulse">
+                  Wait your turn
+                </div>
+              )}
+            </div>
             <div className="text-sm font-bold tracking-widest text-blue-500/50 uppercase">Player 1</div>
             <DraggablePiece type="X" isTurn={isXNext && !winner && !isDraw} />
           </div>
@@ -122,7 +129,14 @@ export default function App() {
           </div>
 
           {/* Player O Toolbar */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 min-w-[100px]">
+            <div className="h-4">
+              {(isXNext && !winner && !isDraw) && !winner && !isDraw && (
+                <div className="text-xs font-medium text-slate-400 whitespace-nowrap animate-pulse">
+                  Wait your turn
+                </div>
+              )}
+            </div>
             <div className="text-sm font-bold tracking-widest text-red-500/50 uppercase">Player 2</div>
             <DraggablePiece type="O" isTurn={!isXNext && !winner && !isDraw} />
           </div>

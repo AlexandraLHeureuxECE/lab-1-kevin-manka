@@ -25,11 +25,6 @@ export default function DraggablePiece({ type, isTurn }) {
 
     return (
         <div className={clsx("relative", !isTurn && "opacity-50 grayscale cursor-not-allowed pointer-events-none")}>
-            {!isTurn && (
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-medium text-slate-400 whitespace-nowrap animate-pulse">
-                    Wait your turn
-                </div>
-            )}
             <Piece
                 ref={setNodeRef}
                 style={style}
