@@ -8,12 +8,12 @@ export default {
     extend: {
       colors: {
         game: {
-          bg: '#0f172a', // Slate 900
-          board: '#1e293b', // Slate 800
+          bg: 'var(--color-game-bg)',
+          board: 'var(--color-game-board)',
           x: '#3b82f6', // Blue 500
           o: '#ef4444', // Red 500
           accent: '#10b981', // Emerald 500
-          text: '#f8fafc', // Slate 50
+          text: 'var(--color-game-text)',
         }
       },
       fontFamily: {

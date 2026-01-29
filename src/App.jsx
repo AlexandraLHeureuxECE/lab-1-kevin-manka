@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { DndContext, DragOverlay, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { snapCenterToCursor } from '@dnd-kit/modifiers';
 import Square from './components/Square';
@@ -36,6 +36,18 @@ export default function App() {
     useSensor(MouseSensor, { activationConstraint: { distance: 10 } }),
     useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
+
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   const handleDragStart = (event) => {
     setActiveId(event.active.id);
@@ -84,16 +96,33 @@ export default function App() {
       </h1>
 
       {/* Game Status Bar */}
-      <div className="flex items-center justify-between w-full max-w-md mb-8 bg-slate-800/50 p-4 rounded-2xl backdrop-blur-sm border border-slate-700/50 shadow-xl">
-        <div className="text-xl md:text-2xl font-medium text-slate-200">
+      <div className="flex items-center justify-between w-full max-w-md mb-8 bg-game-board/50 p-4 rounded-2xl backdrop-blur-sm border border-white/10 shadow-xl transition-colors duration-300">
+        <div className="text-xl md:text-2xl font-medium text-game-text">
           {getStatusMessage()}
         </div>
-        <button
-          onClick={resetGame}
-          className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-lg text-sm font-semibold transition-colors border border-slate-600 shadow-sm"
-        >
-          Restart
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2 bg-game-bg hover:bg-opacity-80 text-game-text rounded-lg transition-colors border border-white/10 shadow-sm"
+            aria-label="Toggle Theme"
+          >
+            {isDarkMode ? (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            )}
+          </button>
+          <button
+            onClick={resetGame}
+            className="px-4 py-2 bg-game-bg hover:bg-opacity-80 text-game-text rounded-lg text-sm font-semibold transition-colors border border-white/10 shadow-sm"
+          >
+            Restart
+          </button>
+        </div>
       </div>
 
       <DndContext
@@ -117,7 +146,7 @@ export default function App() {
           </div>
 
           {/* Board */}
-          <div className="grid grid-cols-3 gap-3 md:gap-4 p-4 bg-slate-800 rounded-3xl shadow-2xl border border-slate-700">
+          <div className="grid grid-cols-3 gap-3 md:gap-4 p-4 bg-game-board rounded-3xl shadow-2xl border border-white/5 transition-colors duration-300">
             {board.map((square, index) => (
               <Square
                 key={index}

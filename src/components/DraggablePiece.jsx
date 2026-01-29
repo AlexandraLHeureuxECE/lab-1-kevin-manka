@@ -18,7 +18,7 @@ export default function DraggablePiece({ type, isTurn }) {
         return (
             <div
                 ref={setNodeRef}
-                className={clsx("opacity-30 blur-sm grayscale w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gray-700")}
+                className={clsx("opacity-30 blur-sm grayscale w-16 h-16 md:w-20 md:h-20 rounded-xl bg-game-text")}
             />
         );
     }
