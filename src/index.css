@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html,
+body {
+  @apply h-full bg-game-bg text-game-text font-sans antialiased overflow-hidden;
+}
+
+#root {
+  @apply h-full w-full flex items-center justify-center;
+}
