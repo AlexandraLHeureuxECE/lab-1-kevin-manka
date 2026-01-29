@@ -76,7 +76,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-game-bg flex flex-col items-center py-12 px-4 select-none">
+    <div className="min-h-screen w-full bg-game-bg flex flex-col items-center justify-center p-4 select-none">
 
       {/* Header */}
       <h1 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-red-500 mb-8 tracking-tight drop-shadow-sm">
