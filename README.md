@@ -18,3 +18,6 @@ The following is a list of LLM-assisted coding tools used in the development of 
 1. In the root directory, run `bun install` to install dependencies.
 2. Run `bun run dev` to start the development server on port 5173.
 
+## Deployment
+
+https://alexandralheureuxece.github.io/lab-1-kevin-manka/
