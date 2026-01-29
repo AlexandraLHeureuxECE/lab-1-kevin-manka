@@ -1,16 +1,20 @@
-# React + Vite
+# SE 4471B - Lab 1: Tic Tac Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Kevin Manka (251130737)**
 
-Currently, two official plugins are available:
+## Tool Disclosure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The following is a list of LLM-assisted coding tools used in the development of this project, including how they were used:
 
-## React Compiler
+- **Google Antigravity**
+  - Code editor with agentic LLM integration
+- **Gemini 3 Pro (Low) in Planning Mode (i.e., approve plan before starting implementation)**
+  - LLM used for more complex tasks (Prompts 1-4)
+- **Gemini 3 Flash in Fast Mode**
+  - LLM used for simpler tasks (Prompts 5-8)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run
 
-## Expanding the ESLint configuration
+1. In the root directory, run `bun install` to install dependencies.
+2. Run `bun run dev` to start the development server on port 5173.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
